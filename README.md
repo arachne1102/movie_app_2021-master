@@ -1,7 +1,39 @@
 # 김영민 201840113
+## [ 10월 6일 ]
+## axios 설치 및 사용
+- 데이터를 로딩할때 사용
 
+- 설치 : 콘솔에 입력 
+    ```
+    npm install axios
+    ```
+- 사용
+    ``` 
+    import axios from 'axios'
+    ```
+## super
+- 자바스크립트는 언어적 제약사항으로 생성자에서 super를 호출하기 전에는 this를 사용할 수 없다. super를 먼저 호출해야 this를 사용할 수 있다.
+## setTimeout() 함수
+- 첫 번째 인자는 실행할 함수
+- 두 번째 인자는 지연시간, 두 번째 인자 시간만큼 지난 후 첫 번째 인자의 함수를 실행함.
+- 단위는 msec
+    ```
+    setTimeout(함수이름, 시간);
+    ```
+## componentDidUpdate() 함수
+- setState()함수가 실행되고, render()함수로 화면이 업데이트된 직후
+componentDidUpdate()함수가 실행
+## componentDidMount() 함수
+- render() 함수 실행 직후 실핼된다
+
+## Constructor() 함수
+- Component를 생성할때 state값을 초기화 하거나 매서드를 바인딩할때 사용
+- 생성자 내에서는 setState를 사용하지 않고, this.state를 사용하여 state의 초기값을 할당한다.
+- React.Component를 상속해서 만들어진 컴포넌트의 생성자를 구현할 때는 super(props)를 선언을
+권고하는 이유는 this.props 사용 시 생성자 내에서 정의되지 않아 버그 발생 가능성이 있기때문이다
+
+-------------------------
 ## [ 09월 29일 ]
-## State
 ### 동적데이터, 변경될 가능성이 있는 데이터를 다룰때 사용
 ### 클래스형 컴포넌트를 사용해야한다
 

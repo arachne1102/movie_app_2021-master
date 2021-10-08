@@ -1,30 +1,37 @@
-import React, {Component} from "react";
+import React from "react"
+import axios from 'axios'
 
 class App extends React.Component {
+    getMovies = async () => {
+        const {
+            data: {
+                data: {movies}
+            }
+        } = await axios.get('https://yts.mx/api/v2/list_movies.json')   
+       this.setState({movies,isLoading: false}) ;
+    } 
+
     state = {
-        count : 0,
+       isLoading: true,
+       movies: []
     };
 
-    add = () => {
-        this.setState(current => ({count: this.state.count +1}))
-        console.log('add');
-    };
-
-    Minus = () => {
-        this.setState(current => ({count: this.state.count -1}))
-        console.log('Minus')
+    constructor(props) {
+        super(props)
+        console.log('constructor');
     }
 
+    componentDidMount() {
+       this.getMovies();
+    }
 
     render() {
+        const { isLoading } = this.state;
         return (
             <div>
-                <h1>The number is: {this.state.count}</h1>
-                <button onClick={this.add}>Add</button>
-                <button onClick={this.Minus}>Minus</button>
+                {isLoading ? 'Loading...' : '영화 데이터 출력'}        
             </div>
         )
     }
 }
-
 export default App;
